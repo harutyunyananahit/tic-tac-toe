@@ -52,8 +52,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        move: (i) => {
-            dispatch(handle_click(i));
+        handleClick: (i) => {
+            dispatch(move(i));
         },
         jumpToStep: (step) => {
             dispatch(jump_to_state(step));
