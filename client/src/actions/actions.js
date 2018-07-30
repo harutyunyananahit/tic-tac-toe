@@ -1,6 +1,6 @@
-export function handle_click(i) {
+export function move(i) {
     return {
-        type: "HANDLE_CLICK",
+        type: "MOVE",
         i
     };
 }

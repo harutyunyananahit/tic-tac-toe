@@ -9,7 +9,7 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   // eslint-disable-next-line
     switch (action.type) {
-        case "HANDLE_CLICK": {
+        case "MOVE": {
           const {stepNumber, xIsNext, winner} = state;
           const history = state.history.slice(0, state.stepNumber + 1);
           const squares = history[stepNumber].slice();

@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from "react-redux";
 import '../styles/index.css';
 import {Board} from "../components/components";
-import {handle_click, jump_to_state} from "../actions/actions";
+import {move, jump_to_state} from "../actions/actions";
 
 class Game extends React.Component {
    render() {
@@ -52,7 +52,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleClick: (i) => {
+        move: (i) => {
             dispatch(handle_click(i));
         },
         jumpToStep: (step) => {
