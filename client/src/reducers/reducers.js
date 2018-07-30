@@ -2,7 +2,8 @@ const initialState = {
   history: [Array(9).fill(null)],
   stepNumber: 0,
   xIsNext: true,
-  winner: null
+  winner: null,
+  winnerhistory: []
 };
 
 const reducer = (state = initialState, action) => {
@@ -22,6 +23,16 @@ const reducer = (state = initialState, action) => {
             xIsNext: !xIsNext,
             winner:calculateWinner(squares)
           };
+          if(state.winner) {
+                fetch('/',{
+                    method: 'POST', // or 'PUT'
+                    body:JSON.stringify(state),
+                    headers:{
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                }).catch(error => console.error('Error:', error));
+          }
           break;
         }
         case "JUMP_TO_STATE": {

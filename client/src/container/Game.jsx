@@ -30,6 +30,10 @@ class Game extends React.Component {
           <div>{status}</div>
           <ol>{steps}</ol>
         </div>
+        <div>
+        <h1>Winners History</h1>
+        <ol>{this.props.winnerhistory}</ol>
+        </div>
       </div>
     );
   }
